@@ -1,26 +1,55 @@
 # cd-json
 
-The best project ever.
+Pretend your json is a filesystem.
+
+Example:
+
+    $ cd-json package.json
+    cd-json: opening local file package.json
+    package.json # ls
+    .:
+     name   description     version homepage        author  repository      bugs    licenses        main    engines scripts devDependencies keywords        preferGlobal    bin
+    package.json # cd devDependencies/grunt
+    package.json/devDependencies/grunt # cat .
+    ~0.3.17
+    package.json/devDependencies/grunt # cd ../../engines
+    package.json/engines # ls
+    .:
+     node
+    package.json/engines # cat node
+    >= 0.6.0
+    package.json/engines # cat .
+    { node: '>= 0.6.0' }
+    package.json/engines #
+
+### What's it for?
+
+I don't know yet. If you have ideas, drop me a line.
 
 ## Getting Started
+
 Install the module with: `npm install cd-json`
 
-```javascript
-var cd_json = require('cd-json');
-cd_json.awesome(); // "awesome"
-```
+Then run it
 
-## Documentation
-_(Coming soon)_
+> cd-json my_json_file.json
 
-## Examples
-_(Coming soon)_
+You can also use a url:
 
-## Contributing
-In lieu of a formal styleguide, take care to maintain the existing coding style. Add unit tests for any new or changed functionality. Lint and test your code using [grunt](https://github.com/gruntjs/grunt).
+> cd-json http://example.com/something.json
 
-## Release History
-_(Nothing yet)_
+## Commands
+
+Use `help` to find out what commands are available.
+
+Available commands:
+
+    cd      Change current context
+    cat     Print json contents of object
+    ls      List cd-able properties of object
+    exit    exit cd-json
+    help    Show help
+
 
 ## License
 Copyright (c) 2013 Noam Lewis  

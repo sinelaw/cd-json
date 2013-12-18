@@ -1,6 +1,6 @@
 {
   "name": "cd-json",
-  "description": "The best project ever.",
+  "description": "Pretend json is a filesystem.",
   "version": "0.1.0",
   "homepage": "https://github.com/sinelaw/cd-json",
   "author": {
